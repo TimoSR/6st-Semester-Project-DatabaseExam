@@ -23,6 +23,7 @@ using API.Middleware;
 using BookStore.Core;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc.Authorization;
+using Neo4jClient;
 
 namespace API
 {
@@ -50,6 +51,14 @@ namespace API
                 options.Connection_String = _config.GetValue<string>("MongoDBMetaData:MONGO_CONNECTION");
             });
             services.AddTransient<IBookServices, BookServices>();
+            
+            //Graph Database
+            // Never declare server login information in startup
+            
+            var client = new BoltGraphClient(new Uri("bolt://localhost:7687"), "neo4j", "wowmaster20078");
+            client.ConnectAsync();
+            services.AddSingleton<IGraphClient>(client);
+            
             services.AddControllers(opt =>
             {
 
@@ -63,6 +72,7 @@ namespace API
             });
             services.AddApplicationServices(_config);
             services.AddIdentityServices(_config);
+            
 
         }
 
