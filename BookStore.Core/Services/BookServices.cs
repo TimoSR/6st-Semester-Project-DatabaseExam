@@ -1,4 +1,5 @@
-﻿using System.Security.Cryptography.X509Certificates;
+﻿using System.Diagnostics;
+using System.Security.Cryptography.X509Certificates;
 using MongoDB.Driver;
 
 namespace BookStore.Core;
