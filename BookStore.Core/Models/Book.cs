@@ -14,4 +14,5 @@ public class Book
     public double Price { get; set; }
     public string Category { get; set; }
     public string Author { get; set; }
+    public List<String> Something { get; set; }
 }
