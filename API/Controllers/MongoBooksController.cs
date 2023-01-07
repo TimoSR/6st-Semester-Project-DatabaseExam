@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using BookStore.Core;
+using BookStore.Core.Books.Models;
+using BookStore.Core.Books.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -42,7 +44,7 @@ namespace API.Controllers
         public IActionResult DeleteBook(string id)
         {
             _bookServices.DeleteBook(id);
-            return NoContent();
+            return Ok();
         }
 
         [HttpPut]

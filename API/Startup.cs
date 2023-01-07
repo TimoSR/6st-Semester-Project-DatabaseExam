@@ -21,6 +21,8 @@ using Persistence;
 using FluentValidation.AspNetCore;
 using API.Middleware;
 using BookStore.Core;
+using BookStore.Core.Books.Services;
+using BookStore.Core.WineCollection.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc.Authorization;
 using Neo4jClient;
@@ -47,10 +49,12 @@ namespace API
             {
                 options.Database_Name = _config.GetValue<string>("MongoDBMetaData:DATABASE_NAME");
                 options.Books_Collection_Name = _config.GetValue<string>("MongoDBMetaData:BOOKS_COLLECTION_NAME");
+                options.Wines_Collection_Name = _config.GetValue<string>("MongoDBMetaData:WINES_COLLECTION_NAME");
                 // This is a big no no in normal use
                 options.Connection_String = _config.GetValue<string>("MongoDBMetaData:MONGO_CONNECTION");
             });
             services.AddTransient<IBookServices, BookServices>();
+            services.AddTransient<IWineServices, WineServices>();
             
             //Graph Database
             // Never declare server login information in startup

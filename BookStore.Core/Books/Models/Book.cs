@@ -1,10 +1,7 @@
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Runtime.Serialization;
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 
-namespace BookStore.Core;
+namespace BookStore.Core.Books.Models;
 
 public class Book
 {
@@ -15,6 +12,6 @@ public class Book
     public double Price { get; set; }
     public string Category { get; set; }
     public Author Author { get; set; }
-    public List<String> Something { get; set; }
+    public List<String> Comments { get; set; }
 }
 

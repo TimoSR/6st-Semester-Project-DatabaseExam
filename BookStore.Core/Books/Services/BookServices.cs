@@ -1,8 +1,7 @@
-﻿using System.Diagnostics;
-using System.Security.Cryptography.X509Certificates;
+﻿using BookStore.Core.Books.Models;
 using MongoDB.Driver;
 
-namespace BookStore.Core;
+namespace BookStore.Core.Books.Services;
 
 public class BookServices : IBookServices
 {

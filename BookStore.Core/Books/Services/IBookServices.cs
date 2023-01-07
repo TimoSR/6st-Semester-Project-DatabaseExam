@@ -1,6 +1,6 @@
-using MongoDB.Driver;
+using BookStore.Core.Books.Models;
 
-namespace BookStore.Core;
+namespace BookStore.Core.Books.Services;
 
 public interface IBookServices
 {

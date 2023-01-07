@@ -1,7 +1,7 @@
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 
-namespace BookStore.Core;
+namespace BookStore.Core.Books.Models;
 
 public class Author
 {
