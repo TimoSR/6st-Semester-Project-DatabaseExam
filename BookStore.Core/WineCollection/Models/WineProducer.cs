@@ -3,7 +3,7 @@ using MongoDB.Bson.Serialization.Attributes;
 
 namespace BookStore.Core.WineCollection.Models;
 
-public class Producer
+public class WineProducer
 {
     [BsonId]
     [BsonRepresentation(BsonType.ObjectId)]

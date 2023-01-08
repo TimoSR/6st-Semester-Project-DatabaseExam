@@ -50,11 +50,13 @@ namespace API
                 options.Database_Name = _config.GetValue<string>("MongoDBMetaData:DATABASE_NAME");
                 options.Books_Collection_Name = _config.GetValue<string>("MongoDBMetaData:BOOKS_COLLECTION_NAME");
                 options.Wines_Collection_Name = _config.GetValue<string>("MongoDBMetaData:WINES_COLLECTION_NAME");
+                options.Wine_Producer_Collection_Name = _config.GetValue<string>("MongoDBMetaData:WINE_PRODUCER_COLLECTION_NAME");
                 // This is a big no no in normal use
                 options.Connection_String = _config.GetValue<string>("MongoDBMetaData:MONGO_CONNECTION");
             });
             services.AddTransient<IBookServices, BookServices>();
             services.AddTransient<IWineServices, WineServices>();
+            services.AddTransient<IWineProducerServices, WineProducerServices>();
             
             //Graph Database
             // Never declare server login information in startup
